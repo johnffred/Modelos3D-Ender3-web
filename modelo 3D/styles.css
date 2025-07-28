@@ -1,0 +1,34 @@
+body {
+    background-color: antiquewhite;
+}
+
+#navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 0 50px 50px 0;
+    border: solid black 1px;
+}
+
+#main-doc {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+.encabezado {
+    border-radius: 10px;
+    border: solid gray 2px;
+    text-align: center;
+    background-color: aliceblue;
+}

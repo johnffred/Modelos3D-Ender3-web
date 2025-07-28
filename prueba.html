@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentación Técnica ESP32</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <header>Documentación Técnica ESP32</header>
+    <a class="nav-link" href="#Introduccion_al_ESP32">Introducción al ESP32</a>
+    <a class="nav-link" href="#Configuracion_inicial">Configuración inicial</a>
+    <a class="nav-link" href="#Primer_programa">Primer programa</a>
+    <a class="nav-link" href="#Aplicaciones_practicas">Aplicaciones prácticas</a>
+    <a class="nav-link" href="#Recursos_y_enlaces">Recursos y enlaces</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-doc">
+    
+    <section class="main-section" id="Introduccion_al_ESP32">
+      <header><h2>Introducción al ESP32</h2></header>
+      <p>El ESP32 es un microcontrolador con WiFi y Bluetooth.</p>
+      <p>Fue desarrollado por Espressif Systems como sucesor del ESP8266.</p>
+      <p>Cuenta con múltiples interfaces: SPI, I2C, UART, ADC y más.</p>
+      <p>Puede ser programado con Arduino IDE, PlatformIO y ESP-IDF.</p>
+      <p>Soporta conexiones WiFi y BLE para aplicaciones IoT.</p>
+      <p>Incluye seguridad criptográfica en hardware.</p>
+      <p>Es ideal para proyectos de bajo consumo.</p>
+      <p>Puede utilizarse con baterías de litio de 3.7V.</p>
+      <p>Tiene múltiples variantes, como el ESP32-WROOM-32.</p>
+      <p>Es ampliamente usado en la comunidad maker.</p>
+      <code>ESP32.begin();</code>
+      <code>Serial.begin(115200);</code>
+      <code>pinMode(2, OUTPUT);</code>
+      <code>digitalWrite(2, HIGH);</code>
+      <code>delay(1000);</code>
+      <ul>
+        <li>WiFi integrado</li>
+        <li>Bluetooth BLE</li>
+        <li>Doble núcleo</li>
+        <li>GPIO multipropósito</li>
+        <li>Comunidad activa</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Configuracion_inicial">
+      <header><h2>Configuración inicial</h2></header>
+      <p>Se recomienda usar Arduino IDE o PlatformIO.</p>
+      <p>Debes instalar los drivers USB del ESP32.</p>
+      <p>En Arduino IDE, añade el soporte de ESP32 desde el Gestor de Placas.</p>
+      <p>Ve a Preferencias y agrega:</p>
+      <p><code>https://dl.espressif.com/dl/package_esp32_index.json</code></p>
+      <p>Después, abre el Gestor de Placas e instala "esp32 by Espressif Systems".</p>
+      <p>Selecciona la placa "ESP32 Dev Module".</p>
+      <p>Conecta el ESP32 y selecciona el puerto adecuado.</p>
+      <p>Haz clic en subir para cargar tu primer programa.</p>
+      <p>¡Listo para comenzar!</p>
+      <code>void setup() {</code>
+      <code>Serial.begin(115200);</code>
+      <code>}</code>
+      <code>void loop() {</code>
+      <code>Serial.println("Hola ESP32"); }</code>
+      <ul>
+        <li>Instalar drivers</li>
+        <li>Agregar URL en Arduino</li>
+        <li>Elegir la placa correcta</li>
+        <li>Seleccionar puerto COM</li>
+        <li>Subir código de prueba</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Primer_programa">
+      <header><h2>Primer programa</h2></header>
+      <p>Vamos a encender y apagar un LED interno.</p>
+      <p>Este ejercicio permite verificar la instalación y configuración.</p>
+      <p>El pin GPIO2 suele tener un LED conectado en muchas placas.</p>
+      <p>El programa usa las funciones pinMode y digitalWrite.</p>
+      <p>Usamos delay para alternar entre encendido y apagado.</p>
+      <p>El código se ejecuta indefinidamente dentro de loop().</p>
+      <p>Puedes modificar el tiempo para cambiar la frecuencia del parpadeo.</p>
+      <p>Este proyecto es una base para probar relés, sensores y más.</p>
+      <p>Te permite entender cómo se controlan los pines del ESP32.</p>
+      <p>¡Es el clásico "Hola Mundo" del hardware!</p>
+      <code>void setup() { pinMode(2, OUTPUT); }</code>
+      <code>void loop() {</code>
+      <code>digitalWrite(2, HIGH); delay(1000);</code>
+      <code>digitalWrite(2, LOW); delay(1000); }</code>
+      <code>// LED parpadeando</code>
+      <ul>
+        <li>GPIO2 usado por defecto</li>
+        <li>Parpadeo controlado con delay</li>
+        <li>Programa se repite en loop()</li>
+        <li>Verificación inicial del sistema</li>
+        <li>Puede modificarse para pruebas</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Aplicaciones_practicas">
+      <header><h2>Aplicaciones prácticas</h2></header>
+      <p>El ESP32 puede usarse en monitoreo ambiental.</p>
+      <p>También en automatización del hogar.</p>
+      <p>Se puede conectar a servicios en la nube.</p>
+      <p>Control de motores o relés es muy común.</p>
+      <p>Los sensores más usados son DHT11, MQ-135, y ultrasonido.</p>
+      <p>Se puede alimentar con baterías recargables.</p>
+      <p>Existen aplicaciones de visualización con Blynk o Node-RED.</p>
+      <p>También puede ser servidor web embebido.</p>
+      <p>Admite programación con MicroPython y JavaScript (Espruino).</p>
+      <p>Hay kits de desarrollo con pantalla OLED y sensores incluidos.</p>
+      <code>#include &lt;WiFi.h&gt;</code>
+      <code>WiFi.begin("tuSSID", "tuPassword");</code>
+      <code>while (!WiFi.isConnected()) { delay(500); }</code>
+      <code>Serial.println(WiFi.localIP());</code>
+      <code>// Conexión WiFi básica</code>
+      <ul>
+        <li>IoT doméstico</li>
+        <li>Sensado remoto</li>
+        <li>Riego automatizado</li>
+        <li>Alarmas inteligentes</li>
+        <li>Control por internet</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Recursos_y_enlaces">
+      <header><h2>Recursos y enlaces</h2></header>
+      <p>Documentación oficial en el sitio de Espressif.</p>
+      <p>Tutoriales gratuitos en sitios como Random Nerd Tutorials.</p>
+      <p>Proyectos completos en Hackster.io.</p>
+      <p>Repositorio oficial en GitHub con ejemplos.</p>
+      <p>Comunidades activas en Reddit, Discord y Stack Overflow.</p>
+      <p>Plataformas recomendadas: PlatformIO, Arduino IDE, VS Code.</p>
+      <p>EspHome y Tasmota permiten integración sin programación.</p>
+      <p>YouTube tiene miles de videos sobre ESP32 en español.</p>
+      <p>Existen apps móviles para programar el ESP vía Bluetooth.</p>
+      <p>Muchos modelos se consiguen fácilmente en Colombia.</p>
+      <code>https://docs.espressif.com</code>
+      <code>https://randomnerdtutorials.com</code>
+      <code>https://github.com/espressif</code>
+      <code>https://esphome.io</code>
+      <code>https://hackster.io</code>
+      <ul>
+        <li>Espressif Docs</li>
+        <li>GitHub</li>
+        <li>Hackster.io</li>
+        <li>Node-RED</li>
+        <li>Blynk App</li>
+      </ul>
+    </section>
+
+  </main>
+</body>
+</html>

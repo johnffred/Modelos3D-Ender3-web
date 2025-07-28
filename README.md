@@ -21,7 +21,7 @@ Este sitio muestra paso a paso cómo diseñar, modelar, preparar e imprimir piez
 - Visual Studio Code
 - Git & GitHub
 
-## 📸 Captura del proyecto (opcional)
+## 📸 Captura del proyecto 
 
 <img width="1430" height="758" alt="image" src="https://github.com/user-attachments/assets/15cc13c3-e33b-4547-acea-69f1518990de" />
 
